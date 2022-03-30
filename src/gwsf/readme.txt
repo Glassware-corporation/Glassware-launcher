@@ -6,6 +6,6 @@ if for any reason it breaks, do the following:
 go to github and make a issue 
 
 GWSF is a simple boolean/string/int save file format, used for saveing small amounts of data.
-you will see the file format used alot in my programs.
+you will see the file format used alot in out programs.
 
 (c) 2022 glassware Corporation

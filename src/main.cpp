@@ -1,14 +1,14 @@
 #include <iostream>
 #include <fstream>
 
+#include "header.h"
+
 using namespace std;
 
 // define all files here
-fstream hasOpenedFile("gwsf/hasOpened.gwsf", fstream::out | fstream::app);
+fstream hasOpenedFile("./gwsf/hasOpened.gwsf");
 int hasOpened;
 
-// define all functions here
-void endProgram(int exitCode);
 
 int main() {
     hasOpenedFile >> hasOpened;
@@ -16,16 +16,13 @@ int main() {
     if (hasOpened == 0){
         hasOpenedFile << 1;
         cout << "welcome" << endl;
+        
     }
     else if (hasOpened == 1){
         cout << "welcome back" << endl;
     }
     else {
-        cout << "Something went wrong.\nfixing automaticly...\n\n";
-        // write 0 to hasOpened.jsf
-        hasOpenedFile << "0";
-        cout << "fixed... please restart the program.\n";
-        endProgram(2);
+        fixGWSF("hasOpened.gwsf");
     }
 
     cout << endl;
@@ -33,8 +30,4 @@ int main() {
     return 0;
 }
 
-void endProgram(int exitCode) {
-    hasOpenedFile.close();
 
-    exit(exitCode);
-}
