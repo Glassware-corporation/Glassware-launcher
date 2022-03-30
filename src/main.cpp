@@ -4,7 +4,7 @@
 using namespace std;
 
 // define all files here
-fstream hasOpenedFile("jsf/hasOpened.jsf", fstream::out | fstream::app);
+fstream hasOpenedFile("gwsf/hasOpened.gwsf", fstream::out | fstream::app);
 int hasOpened;
 
 // define all functions here
