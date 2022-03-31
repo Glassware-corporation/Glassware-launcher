@@ -1,6 +1,10 @@
 # Install
 
-{ENTER INSTALL INSTRUCTIONS HERE}
+There is currently **NO** install proccess yet as of *march 31 2022*, 
+
+it is too early to even have **BETA** versions for you
+
+when the **core** functions of this program, then it will go to **BETA** and you will get to try it out
 
 # What is this?
 
