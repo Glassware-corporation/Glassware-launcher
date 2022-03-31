@@ -1,0 +1,6 @@
+THIS FILE IS FOR DEVELOPMENT PURPOSES ONLY.
+DO NOT ENTER THE COMMAND BELOW IN PRODUCTION.
+
+clear && g++ main.cpp -o out && echo "===start===" && echo '\033[34m' && ./out && exitCode=$? && echo '\033[39m' && echo "===end===" && echo "exit code : $exitCode" && rm out
+
+hasOpened.gwsf

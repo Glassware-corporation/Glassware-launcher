@@ -1,0 +1,9 @@
+Read this if you are haveing probleams with GlassWare Launcher
+If nothings works, make a issue on github, or FULLY install GlassWare Launcher, and then try again.
+
+exit code 0 : success
+exit code 1 : something went fatally wrong. please reinstall GlassWare Launcher
+exit code 2 : one of GWSF files is either missing, corrupted or got modified. if you tired to fix it and nothing worked then your can either reinstall GlassWare Launcher or you can install the GWSF files from the github (YOU WILL NEED TO GO THRU THE INSTALLATION PROCESS)
+exit code 3 : failed to create the GlassWare Launcher directory, please check your permissions
+exit code 4 : failed to install a GlassWare Program.
+exit code 5 : Python 3 is not installed on your system. Please install it and try again.
