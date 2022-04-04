@@ -29,7 +29,7 @@ while True:
         time.sleep(0.3)
     else:
         fileOpened = open(fileNeedFixing, "w")
-        if fileNeedFixing == accepted_file_names[0]:
+        if fileNeedFixing == "gwsf/hasOpened.gwsf":
             while True:
                 print("have you ever used GlassWare Launcher before? (y/n)")
                 answer = input(">")

@@ -3,6 +3,8 @@
 
 using namespace std;
 
+void endProgram(int exitCode);
+
 void fixGWSF(string whatFile){
         cout << "something went worng with the file '"<< whatFile <<"' \n\nentering recovering mode... \n";
         // check if python is installed
