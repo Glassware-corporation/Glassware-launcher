@@ -2,7 +2,7 @@
 
 we are **NOT** resbonsible for **ANY** damage, 
 
-**READ THE LICENCE.TXT**
+**READ THE [LICENSE.TXT](https://github.com/Glassware-corporation/Glassware-launcher/blob/master/LICENSE.txt)**
 
 ## Supported Versions
 
