@@ -16,7 +16,7 @@ using namespace std;
     ^ note comment
 */
 
-string version = "0.1.2";
+string version = "0.6.4";
 
 // string temp = "";
 
