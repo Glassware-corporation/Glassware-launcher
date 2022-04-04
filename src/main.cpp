@@ -5,6 +5,21 @@
 
 using namespace std;
 
+/*
+    vscode extension: Better Comments, https://marketplace.visualstudio.com/items?itemName=ms-vscode.better-comments
+      normal comment
+    ! important comment
+    // strike thru comment
+    * read this comment
+    ? question comment
+    todo : todo comment
+    ^ note comment
+*/
+
+string version = "0.1.2";
+
+// string temp = "";
+
 // define all files here
 fstream hasOpenedFile("./gwsf/hasOpened.gwsf");
 int hasOpened;
@@ -34,6 +49,7 @@ string path;
 ofstream logFile("./log/log.txt");
 
 void logf(string what);
+void press_any_key();
 
 /* 
     TODO : FIX THE GWSF FILES
@@ -71,12 +87,12 @@ int main() {
         usrNameFile << usrName;
 
         // age is not needed for now, but it may be needed for other programs
-        cout << "please enter the year you were born" << endl;
+        cout << "please enter your age" << endl;
         logf("asked for age");
         cin >> age;
 
         logf("checking age");
-        if (age > 2012){
+        if (age < 5){
             cout << "you are too young to use this launcher\nplease contact the developer of this launcher\n\n";
             endProgram(6);
         }
@@ -96,7 +112,7 @@ int main() {
             cout << "you can change this later in the launcher settings\n\n";
         }
 
-        // todo: make a python script to change the hasOpened file to 1, BECAUSE I CANT DO IT IN C++ :/
+        // // todo: make a python script to change the hasOpened file to 1, BECAUSE I CANT DO IT IN C++ :/
 
         if (system("python3 -V") == 0){
             // check if python file is in the same directory
@@ -112,10 +128,13 @@ int main() {
         }
 
         cout << "setup complete - 1\n\n";
+        cout << "restart the launcher...\n\n";
+
         usrNameFile.close();
         ageFile.close();
     }
     else if (hasOpened == 1){
+        goto mainMenu;
     updateCheck:
         cout << "installation manager======>>>>>------\n\n";
         cout << "checking for updates...\n\n";
@@ -134,7 +153,144 @@ int main() {
         }
         system("sleep 1 && clear");
     mainMenu:
+        system("clear");
+    mainMenuNoClear:
+        cout << "main menu======>>>>>------\n\n";
         cout << "welcome back "<< usrName << endl;
+        cout << "please select an option (1-5 (type a number and press enter))\n\n";
+        cout << "1. GlassWare Launcher Programs\n2. GlassWare Launcher Settings\n3. Help\n4. About\n5. Exit\n\n";
+        int choice;
+        cin >> choice;
+        switch (choice){
+            case 1:
+                goto mainMenu;
+            case 2:
+                system("clear");
+                cout << "GlassWare Launcher Settings\n\n";
+                cout << "1. Change Username\n2. Change Path\n3. Change Age\n4. factory reset launcher\n5. exit\n\n";
+                int choice2;
+                cin >> choice2;
+                switch (choice2){
+                    case 1:
+                        usrNameFile.close();
+                        usrNameFile.open("./gwsf/usrName.gwsf", std::ios_base::trunc);
+                        cout << "change username\n\n";
+                        cout << "please enter your new username" << endl;
+                        cin >> usrName;
+                        usrNameFile << usrName;
+                        cout << "username changed\n\n";
+    
+                        press_any_key();        
+                        goto mainMenu;
+                    case 2:
+                        pathFile.close();
+                        pathFile.open("./gwsf/path.gwsf", std::ios_base::trunc);
+                        cout << "change path\n\n";
+                        cout << "please enter the path to the Glassware programs folder" << endl;
+                        cin >> path;
+                        pathFile << path;
+                        cout << "path changed\n\n";
+    
+                        press_any_key();
+                        goto mainMenu;
+                    case 3:
+                        ageFile.close();
+                        ageFile.open("./gwsf/age.gwsf", std::ios_base::trunc);
+                        cout << "change age\n\n";
+                        cout << "please enter your age" << endl;
+                        cin >> age;
+                        ageFile << age;
+                        cout << "age changed\n\n";
+    
+                        press_any_key();
+                        goto mainMenu;
+                    case 4:
+                    {
+                        cout << "factory reset launcher\n\n";
+                        cout << "are you sure you want to reset the launcher? (Y/n)" << endl;
+                        string chioce4;
+                        cin >> chioce4;
+                        if (chioce4 == "Y" || chioce4 == "y"){
+                            usrNameFile.close();
+                            usrNameFile.open("./gwsf/usrName.gwsf", std::ios_base::trunc);
+                            usrNameFile << "";
+                            ageFile.close();
+                            ageFile.open("./gwsf/age.gwsf", std::ios_base::trunc);
+                            ageFile << "";
+                            pathFile.close();
+                            pathFile.open("./gwsf/path.gwsf", std::ios_base::trunc);
+                            pathFile << "";
+                            system("python3 changeHasOpen2.py");
+
+                            cout << "factory reset complete\n\nrestart the launcher\n\n";
+                        }
+                        else {
+                            cout << "factory reset cancelled\n\n";
+                        }
+                        press_any_key();
+                        endProgram(0);
+                    }
+                    case 5:
+                        goto mainMenu;
+                    default:
+                        cout << "invalid choice\n\n";
+    
+                        press_any_key();
+                        goto mainMenu;
+                }
+            case 3:
+                system("clear");
+                cout << "help\n\n";
+                cout << "send a message to the developer\n\n";
+                press_any_key();
+                goto mainMenu;
+            case 4:
+                system("clear");
+                cout << "about\n\n";
+                cout << "1. Glassware launcher\n2. Developer\n3. you\n4. Exit\n\n";
+                int choice3;
+                cin >> choice3;
+                switch (choice3){
+                    case 1:
+                        cout << "Glassware launcher\n\n";
+                        cout << "version "<< version <<"\n\n";
+                        cout << "developed by Jacob O'Brien\n\n";
+    
+                        press_any_key();
+                        
+                        goto mainMenu;
+                    case 2:
+                        cout << "Developer\n\n";
+                        cout << "name: Jacob O'Brien\n\n";
+                        cout << "Github: jakeTheDev0000\n\n";   
+
+                        press_any_key();
+                        goto mainMenu;
+                    case 3:
+                        cout << "you\n\n";
+                        cout << "name: " << usrName << endl;
+                        cout << "age: " << age << endl;
+                        cout << "path: " << path << endl;
+    
+                        press_any_key();
+                        goto mainMenu;
+                    case 4:
+                        goto mainMenu;
+                    default:
+                        cout << "invalid choice\n\n";
+    
+                        press_any_key();
+                        goto mainMenu;
+                }
+            case 5:
+                break;
+            default:
+                cout << "invalid choice\n\n";
+                press_any_key();
+                goto mainMenu;
+        }
+
+
 
     }
     else {
@@ -150,6 +306,14 @@ int main() {
 
 void logf(string what){
     logFile << what;
+}
+
+void press_any_key()
+{
+    std::cout << "Press Enter to Continue";
+    cin.ignore();
+    cin.ignore();
+
 }
 
 

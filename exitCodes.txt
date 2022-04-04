@@ -1,5 +1,5 @@
 Read this if you are haveing probleams with GlassWare Launcher
-If nothings works, make a issue on github, or FULLY install GlassWare Launcher, and then try again.
+If nothings works, make a issue on github, or FULLY reinstall GlassWare Launcher, and then try again.
 
 exit code 0 : success
 exit code 1 : something went fatally wrong. please reinstall GlassWare Launcher
