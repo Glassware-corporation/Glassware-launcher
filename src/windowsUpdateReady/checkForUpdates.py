@@ -41,7 +41,7 @@ if need_an_update:
         print("Please wait...")
         internal_version_write.write(master_version)
         internal_version_write.close()
-        webbrowser.open("https://thunderous-marzipan-35cf95.netlify.app/update.file/GWLwin.zip")
+        webbrowser.open("https://thunderous-marzipan-35cf95.netlify.app/update.file/windows_version6.4.zip")
     else:
         print("You are up to date!")
 else:
