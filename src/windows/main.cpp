@@ -18,6 +18,11 @@ using namespace std;
 
 string version = "0.6.4";
 
+// ofstream hasPythonFile("./gwsf/hasPython.gwsf", std::ios_base::app);
+// ifstream hasPythonFileR("./gwsf/hasPython.gwsf");
+
+// string hasPython3;
+
 // string temp = "";
 
 // define all files here
@@ -52,8 +57,9 @@ void logf(string what);
 void press_any_key();
 
 /* 
-    TODO : FIX THE GWSF FILES
-
+    TODO : work on application list
+    TODO : update/installeion manager
+    TODO : work on windows version and the linux version
 */
 
 
@@ -71,22 +77,24 @@ int main() {
     if (hasOpened == 0){
     setup:
         if (system("python3 -V") == 0){
-            system("clear");
+            system("cls");
         }
         else {
-            system("clear");
+            //system("cls");
             cout << "\n### python is not installed ###\nplease install python 3 or greater \n\n";
             endProgram(5);
         }
-
         cout << "welcome to the GlassWare launcher for the first time\nThis is the setup and you will only need todo this once\n" << endl;
-        system("sleep 0.1");
+        system("timeout 1 > NULL");
+
         cout << "please enter your Name/GlassWare username -NO SPACES- (its fine if you dont have an GlassWare account just enter anything, ex. your first name)" << endl;
         logf("asked for username");
+
         cin >> usrName;
         usrNameFile << usrName;
 
         // age is not needed for now, but it may be needed for other programs
+        
         cout << "please enter your age" << endl;
         logf("asked for age");
         cin >> age;
@@ -98,6 +106,7 @@ int main() {
         }
         ageFile << age;
 
+        
         logf("asked for path");
         cout << "do you want to setup where the Glassware programs will be installed? (Y/n)" << endl;
         string answer;
@@ -113,7 +122,7 @@ int main() {
         }
 
         // // todo: make a python script to change the hasOpened file to 1, BECAUSE I CANT DO IT IN C++ :/
-
+        
         if (system("python3 -V") == 0){
             // check if python file is in the same directory
             if (system("python3 changeHasOpen.py") == 0){
@@ -126,7 +135,7 @@ int main() {
         else {
             cout << "\n### python is not installed ###\nplease install python \n\n";
         }
-
+        
         cout << "setup complete - 1\n\n";
         cout << "restart the launcher...\n\n";
 
@@ -134,26 +143,27 @@ int main() {
         ageFile.close();
     }
     else if (hasOpened == 1){
-        goto mainMenu;
     updateCheck:
         cout << "installation manager======>>>>>------\n\n";
         cout << "checking for updates...\n\n";
-        system("sleep 1");
+        system("timeout 1 > NULL");
+        
         if (system("python3 -V") == 0){
             // check if python file is in the same directory
             if (system("python3 checkForUpdates.py") == 0){
                 cout << "update check complete\n\n";
             }
             else {
-                fixGWSF("checkForUpdates.py");
+                cout << "update check failed\n\n";
             }
         }
         else {
             cout << "\n### python is not installed ###\nplease install python \n\n";
+            endProgram(5);
         }
-        system("sleep 1 && clear");
+        system("timeout 1 && cls");
     mainMenu:
-        system("clear");
+        system("cls");
     mainMenuNoClear:
         cout << "main menu======>>>>>------\n\n";
         cout << "welcome back "<< usrName << endl;
@@ -163,9 +173,10 @@ int main() {
         cin >> choice;
         switch (choice){
             case 1:
+            
                 goto mainMenu;
             case 2:
-                system("clear");
+                system("cls");
                 cout << "GlassWare Launcher Settings\n\n";
                 cout << "1. Change Username\n2. Change Path\n3. Change Age\n4. factory reset launcher\n5. exit\n\n";
                 int choice2;
@@ -239,13 +250,13 @@ int main() {
                         goto mainMenu;
                 }
             case 3:
-                system("clear");
+                system("cls");
                 cout << "help\n\n";
                 cout << "send a message to the developer\n\n";
                 press_any_key();
                 goto mainMenu;
             case 4:
-                system("clear");
+                system("cls");
                 cout << "about\n\n";
                 cout << "1. Glassware launcher\n2. Developer\n3. you\n4. Exit\n\n";
                 int choice3;
