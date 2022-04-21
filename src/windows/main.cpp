@@ -164,13 +164,14 @@ int main() {
         }
         system("timeout 1 && cls");
     mainMenu:
-        system("cls");
+        int choice = 0;
+        system("cls");        
     mainMenuNoClear:
         cout << "main menu======>>>>>------\n\n";
         cout << "welcome back "<< usrName << endl;
         cout << "please select an option (1-5 (type a number and press enter))\n\n";
         cout << "1. GlassWare Launcher Programs\n2. GlassWare Launcher Settings\n3. Help\n4. About\n5. Exit\n\n";
-        int choice;
+        
         cin >> choice;
         switch (choice){
             case 1:
@@ -267,7 +268,7 @@ int main() {
                     case 1:
                         cout << "Glassware launcher\n\n";
                         cout << "version "<< version <<"\n\n";
-                        cout << "developed by Jacob O'Brien\n\n";
+                        cout << "developed by Glassware\n\n";
     
                         press_any_key();
                         
@@ -298,9 +299,13 @@ int main() {
             case 5:
                 break;
             default:
-                cout << "invalid choice\n\n";
-                press_any_key();
-                goto mainMenu;
+                // cout << "invalid choice\n\n";
+                // press_any_key();
+                // system("timeout 1 && cls");
+                // goto mainMenu;
+                // //cout << "no" << endl;
+                cout << "ERROR INPUTED ANSWER CRASHED THE LANCHER\nCLOSEING BEFORE ANY DAMAGES\n"; 
+                endProgram(7);
         }
 
 

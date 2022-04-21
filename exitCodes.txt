@@ -8,3 +8,4 @@ exit code 3 : failed to create the GlassWare Launcher directory, please check yo
 exit code 4 : failed to install a GlassWare Program.
 exit code 5 : Python 3 (or higher) is not installed on your system. Please install it and try again.
 exit code 6 : setup failed
+exit code 7 : something went fatally wrong. (usually just closes the program)
