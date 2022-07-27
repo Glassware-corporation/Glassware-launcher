@@ -1,3 +1,12 @@
+# THIS CODE BASE IS DEPACATED
+## THERE WILL BE A NEW VERSION, CALLED MessyCodeLauncher aka MCL
+
+## ANYTHING HERE IS UNABLE TO BE USED. GOOD LUCK IF YOUR GOING TO USE THIS
+
+
+[link to the Github Repo fot MCL](https://github.com/JakeTheDev0000/MCL)
+
+
 # Install
 
 There is currently **NO** install proccess yet as of *march 31 2022*, 

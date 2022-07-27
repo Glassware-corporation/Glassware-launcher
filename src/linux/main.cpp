@@ -5,6 +5,11 @@
 
 using namespace std;
 
+//! THIS CODE BASE IS DEPACATED
+//! THERE WILL BE A NEW VERSION, CALLED MessyCodeLauncher aka MCL
+
+//! ANYTHING HERE IS UNABLE TO BE USED. GOOD LUCK IF YOUR GOING TO USE THIS
+
 /*
     vscode extension: Better Comments, https://marketplace.visualstudio.com/items?itemName=ms-vscode.better-comments
       normal comment
