@@ -15,6 +15,13 @@ using namespace std;
     todo : todo comment
     ^ note comment
 */
+
+//! THIS CODE BASE IS DEPACATED
+//! THERE WILL BE A NEW VERSION, CALLED MessyCodeLauncher aka MCL
+
+//! ANYTHING HERE IS UNABLE TO BE USED. GOOD LUCK IF YOUR GOING TO USE THIS
+
+
 ifstream versionFile("./gwsf/version.gwsf");
 string version;
 
